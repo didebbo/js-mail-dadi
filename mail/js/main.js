@@ -26,7 +26,6 @@ accedi.onclick = (e) => {
         log.style.display = "block";
     }
     else {
-        alert("aaa");
         log.style.display = "none";
 
         for (let i = 0; i < emails.length; i++) {
@@ -39,9 +38,7 @@ accedi.onclick = (e) => {
                 log.style.display = "block";
             }
         }
-        alert(status);
         if (!status) {
-            alert("aiaiaia");
             log.classList.remove("success")
             log.classList.add("fail");
             log.innerHTML = "Mi dispiace " + email.value + " non esiste nel nostro database";
@@ -51,7 +48,6 @@ accedi.onclick = (e) => {
 }
 
 suggerimento.onclick = (e) => {
-
     if (suggerimenti.style.display == "none") suggerimenti.style.display = "block";
     else suggerimenti.style.display = "none";
 }
