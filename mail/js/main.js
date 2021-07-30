@@ -9,8 +9,10 @@ let emails = [
 const email = document.getElementById("email");
 const accedi = document.getElementById("accedi");
 const log = document.getElementById("log");
+log.style.display = "none";
 const suggerimento = document.getElementById("suggerimento");
 const suggerimenti = document.getElementById("suggerimenti");
+suggerimenti.style.display = "none";
 
 accedi.onclick = (e) => {
     e.preventDefault();
@@ -29,7 +31,6 @@ accedi.onclick = (e) => {
         log.style.display = "none";
 
         for (let i = 0; i < emails.length; i++) {
-            console.log(emails[i]);
             if (email.value === emails[i]) {
                 status = true;
                 log.classList.remove("fail")
@@ -47,7 +48,7 @@ accedi.onclick = (e) => {
     }
 }
 
-suggerimento.onclick = (e) => {
+suggerimento.onclick = () => {
     if (suggerimenti.style.display == "none") suggerimenti.style.display = "block";
     else suggerimenti.style.display = "none";
 }

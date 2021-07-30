@@ -28,7 +28,6 @@ ul {
     display: flex;
     flex-direction: column;
     width: 50%;
-    /* align-items: center; */
     padding: 20px 40px;
 }
 
@@ -62,7 +61,6 @@ ul {
     margin: 20px 0;
     font-weight: bold;
     color: #fff;
-    display: none;
 }
 
 .item .log.success {
@@ -72,10 +70,6 @@ ul {
 .item .log.fail {
     background-color: lightcoral;
 }
-
-/* .item .suggerimenti {
-    text-align: center;
-} */
 
 .item .suggerimenti button {
     position: relative;
@@ -96,7 +90,6 @@ ul {
 
 .item .suggerimenti ul {
     text-align: center;
-    display: none;
 }
 
 .item .suggerimenti li {
