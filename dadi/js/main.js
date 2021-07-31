@@ -1,5 +1,5 @@
 const status = document.getElementById("status");
-const audio_win = document.getElementById("audio_win");
+const audio_status = document.getElementById("audio_status");
 const status_text = document.getElementById("status_text");
 const btn_lancio = document.getElementById("btn_lancio");
 const dado_user = document.getElementById("dado_user");
@@ -30,8 +30,8 @@ Al lancio:
 var lancio = () => {
 
     status.style.opacity = 0;
-    audio_win.pause();
-    audio_win.currentTime = 0;
+    audio_status.pause();
+    audio_status.currentTime = 0;
 
     user = Math.floor(Math.random() * 6) + 1;
     cpu = Math.floor(Math.random() * 6) + 1;
@@ -44,7 +44,7 @@ var lancio = () => {
             user_roll = null;
             if (cpu_roll == null) check_winner();
         }
-    }, 200);
+    }, 100);
 
     cpu_roll = setInterval(() => {
         var num = Math.floor(Math.random() * 6) + 1;
@@ -54,7 +54,7 @@ var lancio = () => {
             cpu_roll = null;
             if (user_roll == null) check_winner();
         }
-    }, 200);
+    }, 100);
 }
 
 // Controllo chi è il vincitore e mostro il messaggio 
@@ -63,18 +63,22 @@ var check_winner = () => {
         status_text.innerHTML = "Giocatore 1 Vince!";
         status.classList.remove("los");
         status.classList.add("win");
-        audio_win.play();
+        audio_status.src = "audio/win.mp3";
+        audio_status.play();
     }
     else if (user < cpu) {
         status_text.innerHTML = "Computer Vince!";
         status.classList.remove("win");
         status.classList.add("los");
+        audio_status.src = "audio/lose.mp3";
+        audio_status.play();
     }
     else {
         status_text.innerHTML = "Parità!";
         status.classList.remove("los");
         status.classList.add("win");
-        audio_win.play();
+        audio_status.src = "audio/win.mp3";
+        audio_status.play();
     }
     status.style.opacity = 1;
 }
