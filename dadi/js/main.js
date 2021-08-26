@@ -4,6 +4,7 @@ const status_text = document.getElementById("status_text");
 const btn_lancio = document.getElementById("btn_lancio");
 const dado_user = document.getElementById("dado_user");
 const dado_cpu = document.getElementById("dado_cpu");
+const speed_roll = 100;
 var user, cpu, user_roll, cpu_roll;
 
 //  Main
@@ -44,7 +45,7 @@ var lancio = () => {
             user_roll = null;
             if (cpu_roll == null) check_winner();
         }
-    }, 100);
+    }, speed_roll);
 
     cpu_roll = setInterval(() => {
         var num = Math.floor(Math.random() * 6) + 1;
@@ -54,7 +55,7 @@ var lancio = () => {
             cpu_roll = null;
             if (user_roll == null) check_winner();
         }
-    }, 100);
+    }, speed_roll);
 }
 
 // Controllo chi è il vincitore e mostro il messaggio 
